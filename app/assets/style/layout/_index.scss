@@ -1,0 +1,809 @@
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "./helpers/variables";
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+@import "./mixin&variables/variables";
+@import "./mixin&variables/mixin";
+
+//start -- banner
+.banner {
+  background-color: $gray-700;
+
+  @include desktop {
+    padding-top: 77.15px;
+    padding-bottom: 66.19px;
+  }
+
+  .container {
+    height: 336px;
+    background: url("https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week6-202207/bg_home_mobile.jpg") no-repeat;
+    background-size: 100% 100%;
+
+    @include desktop {
+      height: 534.66px;
+      background: url("https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week6-202207/bg_home.jpg") no-repeat bottom center/cover;
+    }
+  }
+
+  .row {
+    height: 100%;
+  }
+
+  &-content {
+    border: 1px solid $white;
+    padding-top: 32px;
+    padding-bottom: 32px;
+
+    @include desktop {
+      padding-top: 51px;
+      padding-bottom: 51px;
+
+    }
+  }
+
+  &-title {
+    font-size: 24px;
+    line-height: 35px;
+    font-weight: bold;
+
+    @include desktop {
+      font-size: 48px;
+      line-height: 70px;
+    }
+
+    span {
+      background: linear-gradient(180deg, $secondary 50%, $primary);
+      //可以設定bs5 color擴充
+      background-clip: text;
+      color: transparent;
+    }
+  }
+
+  &-subtitle {
+    font-size: 14px;
+    line-height: 20px;
+
+    @include desktop {
+      font-size: 18px;
+      line-height: 26px;
+      //可以設定ds5 text擴充
+    }
+
+  }
+
+  //start -- banner > banner-decorate(四角方形裝飾)
+  &-decorate {
+    width: 10px;
+    height: 10px;
+    background-color: $white;
+
+    &-lt {
+      left: -5px;
+      top: -5px;
+    }
+
+    &-lb {
+      left: -5px;
+      bottom: -5px;
+    }
+
+    &-rl {
+      right: -5px;
+      top: -5px;
+    }
+
+    &-rb {
+      right: -5px;
+      bottom: -5px;
+    }
+  }
+  //end -- banner > banner-decorate(四角方形裝飾)
+}
+//end -- banner
+
+//start -- feature
+.feature {
+  background-color: $gray-800;
+
+  .material-icons {
+    font-size: 50px;
+    background: linear-gradient(180deg, $secondary, $primary);
+    background-clip: text;
+    color: transparent;
+
+    @include desktop {
+      background: transparent;
+      color: $white;
+    }
+  }
+
+  &-title {
+    font-size: 24px;
+    line-height: 35px;
+
+    @include desktop {
+      font-size: 28px;
+      line-height: 40px;
+    }
+
+    //title下方綠色底線
+    &::after {
+      @include title-line;
+      bottom: -16px;
+      left: 35.11%; // 59/168=35.11%
+
+      @include desktop {
+        left: 0;
+      }
+    }
+
+  }
+
+  .card {
+    border-radius: 12px;
+    background-color: #202020;
+
+    @include desktop {
+      background-color: transparent;
+      opacity: 0.5;
+    }
+
+    &:hover {
+      border: 1px solid $primary;
+
+      @include desktop {
+        opacity: 1;
+
+        .material-icons {
+          background: linear-gradient(180deg, $secondary, $primary);
+          background-clip: text;
+          color: transparent;
+        }
+      }
+    }
+  }
+}
+//end -- feature
+
+//start -- booking
+.booking {
+  background-color: $gray-700;
+
+  &-title {
+    margin-bottom: 66px;
+    font-size: 22px;
+    line-height: 32px;
+
+    @include desktop {
+      margin-bottom: 90px;
+      font-size: 28px;
+      line-height: 40px;
+    }
+
+    //title下方綠色底線
+    &::after {
+      @include title-line;
+      bottom: -16px;
+      left: 35.11%;
+    }
+  }
+
+  .row {
+    margin-bottom: -50px;
+
+    @include desktop {
+      margin-bottom: 0;
+    }
+  }
+
+  .card {
+    background-color: $gray-700;
+    border: 1px solid $white;
+    border-radius: 12px;
+    margin-bottom: 50px;
+
+    @include desktop {
+      margin-bottom: 0;
+    }
+
+    &-title {
+      margin-bottom: 16px;
+      font-size: 24px;
+      line-height: 35px;
+      font-weight: bold;
+    }
+
+    &-body {
+      font-size: 18px;
+      line-height: 26px;
+    }
+  }
+
+  &-number {
+    font-size: 48px;
+    line-height: 56px;
+    color: $primary;
+    left: 48px;
+    top: -28px;
+    background-color: $gray-700;
+
+  }
+}
+//end -- booking
+
+//start -- language
+.language {
+  background-color: $gray-800;
+
+  &-title {
+    text-align: center;
+    margin-bottom: 42px;
+    font-size: 24px;
+    line-height: 35px;
+
+    &::after {
+      @include title-line;
+      bottom: -16px;
+      left: 43.13%; // 157/364=43.13%
+    }
+
+    span {
+      display: block;
+
+      @include desktop {
+        display: inline;
+      }
+    }
+  }
+
+  .pagination {
+    overflow: auto;
+    margin-bottom: 0;
+  }
+
+  .page-link {
+    font-size: 16px;
+    line-height: 24px;
+    background-color: transparent;
+    white-space: nowrap; //要設定不換行
+    color: $white;
+
+    @include desktop {
+      font-size: 18px;
+      line-height: 26px;
+    }
+
+    &:hover,
+    &:focus {
+      border: 1px solid $primary;
+      color: $primary;
+    }
+
+  }
+}
+//end -- language
+
+
+//start -- courses
+.courses {
+  background-color: $black;
+
+  //start -- courses > course-title
+  &-title {
+    color: $white;
+    font-size: 22px;
+    line-height: 32px;
+
+    @include desktop {
+      font-size: 28px;
+      line-height: 40px;
+    }
+
+    //title下方綠色底線
+    &::after {
+      @include title-line;
+      bottom: -16px;
+      left: 35.11%; // 59/168=35.11%
+    }
+  }
+  //start -- courses > course-title
+
+  //start -- courses > card
+  .card {
+    background-color: $gray-800;
+    border-radius: 24px;
+
+    &:hover {
+      border: 2px solid $primary;
+    }
+
+    //start -- courses > card > card-img
+    &-img {
+      width: 100px;
+      height: 100px;
+
+      &-1 {
+        background: url("https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week6-202207/teacher01.jpg") no-repeat center/cover;
+      }
+
+      &-2 {
+        background: url("https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week6-202207/teacher02.jpg") no-repeat center/cover;
+      }
+
+      &-3 {
+        background: url("https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week6-202207/teacher03.jpg") no-repeat center/cover;
+      }
+
+      &-4 {
+        background: url("https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week6-202207/teacher04.jpg") no-repeat center/cover;
+      }
+    }
+    //end -- courses > card > card-img
+
+    &-title {
+      font-size: 20px;
+      line-height: 29px;
+
+      @include desktop {
+        min-height: 58px;
+      }
+    }
+
+    &-body {
+      padding: 0 32px 32px 32px;
+
+      @include desktop {
+        padding: 0 24px 32px 24px;
+      }
+    }
+
+    &-text {
+      max-height: 104px;
+      overflow: hidden;
+    }
+
+    &-footer {
+      background-color: transparent;
+      border-top: 1px solid #C1C1C1;
+      font-size: 32px;
+      line-height: 37px;
+    }
+  }
+  //end -- courses > card
+
+  //start -- courses > btn
+  .btn {
+    background: linear-gradient(104deg, $secondary, $primary);
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+  //end -- courses > btn
+}
+//end -- courses
+
+//start -- info
+.info {
+  height: auto;
+  color: $white;
+  text-align: center;
+
+  @include desktop {
+    height: 615px;
+    text-align: left;
+  }
+
+  //start -- info > indo-bg
+  &-bg {
+    height: 100%;
+    position: relative;
+
+    //背景圖上方再疊一層黑色圖層
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: $gray-700;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      opacity: 0.9;
+    }
+
+    &-1 {
+      background: url("https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week6-202207/info01.jpg") no-repeat center/cover;
+    }
+
+    &-2 {
+      background: url("https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week6-202207/info02.jpg") no-repeat center/cover;
+    }
+
+    &-3 {
+      background: url("https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week6-202207/info03.jpg") no-repeat center/cover;
+    }
+
+    &-4 {
+      background: url("https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week6-202207/info04.jpg") no-repeat center/cover;
+    }
+
+  }
+  //end -- info > indo-bg
+
+  //start -- info > info-text(文字+icon設定)
+  &-text {
+    z-index: 5; //設定z-indext讓文字放在圖片的上方
+    min-width: 216px;
+
+    @include desktop {
+      min-width: none;
+    }
+
+    //icon手機板為綠色，電腦版為白色
+    .material-symbols-outlined {
+      margin-bottom: 18px;
+      font-size: 32px;
+      color: $primary;
+
+      @include desktop {
+        opacity: 0.5;
+        color: $white;
+      }
+
+    }
+  }
+  //end -- info > info-text(文字+icon設定)
+
+  //start -- info > info-text > info-title
+  &-title {
+
+    //title下方綠色底線
+    &::after {
+      @include title-line;
+      bottom: -16px;
+      left: 38.42%; //83/216=38.42%
+
+      //電腦版title下方為白色底線
+      @include desktop {
+        background-color: $white;
+        left: 0;
+      }
+    }
+  }
+  //end -- info > info-text > info-title
+
+  //start -- info > info-text > info-content
+  &-content {
+    opacity: 0.8;
+
+    @include desktop {
+      opacity: 0.5;
+    }
+  }
+  //end -- info > info-text > info-content
+
+  //start -- info > hover設定
+  &-hover {
+    &:hover {
+
+      //hover時黑色背景變透明，露出底下的背景圖片
+      &::after {
+        opacity: 0.12;
+      }
+
+      //hover時文字內容變完全不透明，清晰呈現
+      .info-content {
+        opacity: 1;
+      }
+    }
+
+    @include desktop {
+      &:hover {
+        //電腦版的icon在hover時會變換成主色
+        .material-symbols-outlined {
+          color: $primary;
+          opacity: 1;
+        }
+
+        //電腦版的title下底線在hover時會變換成主色
+        .info-title::after {
+          background-color: $primary;
+        }
+      }
+    }
+  }
+  //end -- info > hover設定
+}
+//end -- info
+
+//start -- share
+.share {
+  background-color: $gray-700;
+
+  //start -- share > title
+  &-title {
+    margin-bottom: 56px;
+
+    // title下方綠色底線
+    &::after {
+      @include title-line;
+      bottom: -16px;
+      left: 27.67%; // 31/112=27.67%
+    }
+
+    @include desktop {
+      margin-bottom: 64px;
+    }
+  }
+  //end -- share > title
+
+  //start -- share > card
+  .card {
+    background-color: transparent;
+
+    &:hover {
+      .card-rounded {
+        display: block;
+      }
+    }
+
+    //start -- share > card > hover rounded
+    &-rounded {
+      display: none;
+      width: 32px;
+      height: 32px;
+
+      &-topleft {
+        border-left: 1px solid $primary;
+        border-top: 1px solid $primary;
+        border-top-left-radius: 10px;
+      }
+
+      &-topright {
+        border-right: 1px solid $primary;
+        border-top: 1px solid $primary;
+        border-top-right-radius: 10px;
+      }
+
+      &-bottomleft {
+        border-left: 1px solid $primary;
+        border-bottom: 1px solid $primary;
+        border-bottom-left-radius: 10px;
+      }
+
+      &-bottomright {
+        border-right: 1px solid $primary;
+        border-bottom: 1px solid $primary;
+        border-bottom-right-radius: 10px;
+      }
+    }
+
+    //end -- share > card > hover rounded
+    //end -- share > card
+  }
+}
+//end -- share
+
+//start -- recommend
+.recommend {
+  background: url("https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week6-202207/bg_share.jpg") no-repeat center/cover;
+
+  //start -- recommend > title
+  &-title {
+    font-size: 28px;
+    line-height: 40px;
+
+    //title下方綠色底線
+    &::after {
+      @include title-line;
+      bottom: -16px;
+      left: 40.38%; //105/260=40.38%
+    }
+
+    // 手機板換行設定
+    span {
+      display: block;
+
+      @include desktop {
+        display: inline;
+      }
+    }
+  }
+  //end -- recommend > title
+
+  //start -- recommend > swiper
+  .swiper {
+    height: 100%;
+
+    //start -- recommend > swiper > wrapper
+    &-wrapper {
+      padding-bottom: 56px;
+
+      @include desktop {
+        padding-bottom: 0;
+      }
+    }
+
+    //end -- recommend > swiper > wrapper
+
+    //start -- recommend > swiper > slide
+    &-slide {
+      font-size: 18px;
+      display: flex;
+      flex-direction: column;
+
+      @include desktop {
+        flex-direction: row;
+        align-items: flex-start;
+      }
+
+      //start -- recommend > swiper > slide > illus
+      &-illus {
+        margin-bottom: 45px;
+
+        @include desktop {
+          width: 56.75%; // 525/925=56.75%
+          height: 88.81%; // 381/429=88.81%
+          margin-bottom: 24px;
+        }
+
+        //插圖下方輪廓線
+        &::before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          border: 1px solid #7C7E77;
+          right: 0;
+          top: 15px; //因transform已位移10px+手機版設計稿間距5px
+          border-radius: 24px;
+
+          @include desktop {
+            top: 20px;//因transform已位移10px+電腦版設計稿間距10px
+          }
+        }
+
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 24px;
+          transform: translate(10px, 10px); //位移設定
+        }
+
+        //end -- recommend > swiper > slide > illus
+      }
+
+      //end -- recommend > swiper > slide
+
+    }
+
+    //start -- recommend > swiper > switch botoom
+    &-btn {
+
+      @include desktop {
+        left: 22%;
+      }
+    }
+
+    //上一頁&下一頁按鈕
+    &-button-prev,
+    &-button-next {
+      height: auto;
+      color: $primary;
+      opacity: 1;
+    }
+
+    &-button-prev::after,
+    &-button-next::after {
+      content: "";
+    }
+
+    //分頁點點
+    .swiper-pagination {
+      width: auto;
+      margin-right: 18px;
+      margin-left: 18px;
+    }
+
+    &-pagination-bullet {
+      background-color: $primary;
+      opacity: 1;
+
+      &-active {
+        width: 16px;
+        border-radius: 100px;
+      }
+    }
+
+    //end -- recommend > swiper > switch botoom
+  }
+
+  //end -- recommend > swiper
+
+
+  .card {
+    border-radius: 24px 24px 24px 0;
+    box-shadow: 0px 4px 20px #49475514;
+
+    @include desktop {
+      width: 44.97%; //416/925=44.97%
+      position: absolute;
+      margin-right: 10px;
+    }
+
+    &-img {
+      width: 80px;
+      height: 80px;
+      right: 32px;
+      top: -30px;
+
+      @include desktop {
+        width: 100px;
+        height: 100px;
+        top: -50px;
+      }
+
+      &-1 {
+        background: url("https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week6-202207/student01.jpg") no-repeat center/cover;
+      }
+
+      &-2 {
+        background: url("https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week6-202207/student02.jpg") no-repeat center/cover;
+      }
+
+      &-3 {
+        background: url("https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week6-202207/student03.jpg") no-repeat center/cover;
+      }
+
+      &-4 {
+        background: url("https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week6-202207/student04.jpg") no-repeat center/cover;
+      }
+
+    }
+
+    &-title {
+      font-size: 18px;
+      line-height: 26px;
+    }
+  }
+
+}
+
+//end -- recommend
+
+//start -- join
+.join {
+  background-color: $black;
+
+  //start -- join > join-body
+  &-body {
+    background-color: #202020;
+    border-radius: 24px;
+  }
+
+  // 書本icon
+  .material-symbols-outlined {
+    font-size: 105px;
+  }
+
+  &-title {
+    font-size: 28px;
+    line-height: 40px;
+  }
+
+  &-text {
+    font-size: 18px;
+    line-height: 26px;
+
+  }
+
+  //btn
+  .btn {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  //end -- join > join-body
+
+}

@@ -1,0 +1,108 @@
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "./helpers/variables";
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+@import "./mixin&variables/variables";
+@import "./mixin&variables/mixin";
+
+//start -- allcourse
+.allcourse {
+    background-color: $gray-700;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    @include desktop {
+        padding-top: 44px;
+        padding-bottom: 80px;
+    }
+
+    //start -- allcourse > pagination(課程名稱列表)
+    .pagination {
+        overflow: auto;
+    }
+
+    .page-link {
+        background-color: transparent;
+        color: $white;
+        border: 1px solid $white;
+        white-space: nowrap;
+
+        &:hover,&:focus {
+            border: 1px solid $primary;
+            color: $primary;
+            box-shadow: none;
+        }
+    }
+    //end -- allcourse > pagination(課程名稱列表)
+
+    //start -- allcourse > card(課程詳細列表)
+    .card {
+        background-color: $gray-800;
+        border-radius: 24px;
+
+        //start -- allcourse > card > img(頭像)
+        &-img {
+            width: 100px;
+            height: 100px;
+
+            &-1 {
+                background: url("https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week6-202207/teacher01.jpg") no-repeat center/cover;
+            }
+
+            &-2 {
+                background: url("https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week6-202207/teacher02.jpg") no-repeat center/cover;
+            }
+
+            &-3 {
+                background: url("https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week6-202207/teacher03.jpg") no-repeat center/cover;
+            }
+
+            &-4 {
+                background: url("https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week6-202207/teacher04.jpg") no-repeat center/cover;
+            }
+        }
+        //end -- allcourse > card > img(頭像)
+
+        &-body {
+            @include desktop {
+                width: 53.53%; //576/1076=53.53%
+                padding-right: 88px;
+            }
+        }
+
+        //start -- allcourse > card > btn
+        &-btn {
+            
+            span {
+                @include desktop {
+                    display: block;
+                }
+            }           
+        }
+
+        &-price {
+            font-size: 32px;
+            line-height: 37px;
+        }
+
+        .btn {
+            font-size: 18px;
+            line-height: 26px;
+
+            @include desktop {
+                display: block;
+            }
+
+            &-primary {
+                background: linear-gradient(104deg,$secondary,$primary);
+            }
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+        //end -- allcourse > card > btn       
+    }
+    //end -- allcourse > card(課程詳細列表)
+}
+
+//end -- allcourse

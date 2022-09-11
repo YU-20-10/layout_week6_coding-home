@@ -1,0 +1,13 @@
+@mixin desktop {
+    @media (min-width:992px) {
+        @content
+    }
+}
+
+@mixin title-line {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background-color: #62DB54;
+}
